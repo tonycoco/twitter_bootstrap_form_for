@@ -98,7 +98,7 @@ class TwitterBootstrapFormFor::FormBuilder < ActionView::Helpers::FormBuilder
           template.concat error_span(attribute)
           block.call if block.present?
         }
-        template.concat template.content_tag(:div, :class => "help-inline", options.delete(:help_inline).to_s) if options[:help_inline]
+        template.concat content_tag(:span, :class => "help-inline", options.delete(:help_inline).to_s) if options[:help_inline]
       end
     end
   end
