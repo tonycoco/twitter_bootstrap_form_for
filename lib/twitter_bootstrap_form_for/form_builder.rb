@@ -96,9 +96,8 @@ class TwitterBootstrapFormFor::FormBuilder < ActionView::Helpers::FormBuilder
         template.concat template.content_tag(:div, :class => classes.join(' ')) {
           template.concat super(attribute, *(args << options))
           template.concat error_span(attribute)
-          block.call if block.present?
         }
-        template.concat content_tag(:span, :class => "help-inline", options.delete(:help_inline).to_s) if options[:help_inline]
+        block.call if block.present?
       end
     end
   end
